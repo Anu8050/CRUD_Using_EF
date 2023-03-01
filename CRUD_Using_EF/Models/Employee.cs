@@ -13,6 +13,7 @@ namespace CRUD_Using_EF.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    [MetadataType(typeof(EmployeeMetaData))]
     public partial class Employee
     {
         public int EmployeeId { get; set; }
@@ -21,7 +22,21 @@ namespace CRUD_Using_EF.Models
         public string City { get; set; }
         public Nullable<decimal> Salary { get; set; }
         public Nullable<int> DepartmentId { get; set; }
-    
         public virtual Department Department { get; set; }
+    }
+
+    public class EmployeeMetaData
+    {
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Gender { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string Salary { get; set; }
+        [Required]
+        public int DepartmentId { get; set; }
+
     }
 }
