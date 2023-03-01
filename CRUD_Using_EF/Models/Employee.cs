@@ -11,7 +11,8 @@ namespace CRUD_Using_EF.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employee
     {
         public int EmployeeId { get; set; }
